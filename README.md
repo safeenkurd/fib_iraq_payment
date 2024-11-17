@@ -10,6 +10,9 @@ The **FIB IRAQ Payment** package provides easy integration with the FIB Iraq pay
 - **Generate QR Codes**: Generate QR codes for payments that can be scanned by the FIB app.
 - **Refund Payments**: Issue refunds for specific payments.
 - **Launch App Links**: Open personal or business FIB apps directly from the payment screen.
+- **Application Modes**: Added support for `stage`, `dev`, and `prod` modes.
+  - The mode is determined by FIB after testing.
+  - Ensure to set the mode to `prod` (or the mode specified by FIB) before deploying to production.
 
 ## Installation
 
@@ -17,7 +20,7 @@ Add `fib_iraq_payment` to your `pubspec.yaml` file as a dependency:
 
 ```yaml
 dependencies:
-  fib_iraq_payment: ^1.0.0
+  fib_iraq_payment: ^0.0.2
 ```
 
 Then, run `flutter pub get` to install the package.
@@ -36,6 +39,7 @@ final FIBService fibService = FIBService();
 void main() {
   fibService.clientId = 'your-client-id';
   fibService.clientSecret = 'your-client-secret';
+  fibService.mode = 'stage'; // Set the mode to `dev`, `stage`, or `prod` (determined by FIB)
   runApp(const MyApp());
 }
 ```
@@ -112,6 +116,7 @@ final FIBService fibService = FIBService();
 void main() {
   fibService.clientId = 'your-client-id';
   fibService.clientSecret = 'your-client-secret';
+  fibService.mode = 'stage'; // Set the mode to `dev`, `stage`, or `prod` (determined by FIB)
   runApp(const FIBPaymentApp());
 }
 

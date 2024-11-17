@@ -1,7 +1,7 @@
 name: fib_iraq_payment
 description: A Flutter package for FIB Iraq payment gateway integration.
-version: 0.0.1
-homepage:
+version: 0.0.2
+homepage: https://github.com/safeenkurd/fib_iraq_payment
 
 environment:
   sdk: ^3.5.3

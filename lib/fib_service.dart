@@ -6,9 +6,10 @@ class FIBService {
   final Dio _dio = Dio();
   String clientId = '';
   String clientSecret = '';
-  final String _authUrl =
-      'https://fib.dev.fib.iq/auth/realms/fib-online-shop/protocol/openid-connect/token';
-  final String _paymentUrl = 'https://fib.dev.fib.iq/protected/v1/payments';
+  String mode = 'stage'; // stage - dev - prod or any other mode
+  String get _authUrl =>
+      'https://fib.$mode.fib.iq/auth/realms/fib-online-shop/protocol/openid-connect/token';
+  String get _paymentUrl => 'https://fib.$mode.fib.iq/protected/v1/payments';
 
   Future<String> _getAccessToken() async {
     final response = await _dio.post(

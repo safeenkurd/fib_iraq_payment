@@ -9,6 +9,7 @@ void main() {
   // You can easily get your client ID and client secret by contacting the FIB company.
   fibService.clientId = 'your client id';
   fibService.clientSecret = 'your client secret';
+  fibService.mode = 'stage'; // stage - dev - prod or any other mode
   runApp(const FIBPaymentApp());
 }
 
